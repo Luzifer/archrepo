@@ -1,0 +1,6 @@
+*.db
+*.db.sig
+*.files
+*.files.sig
+*.tar.xz
+*.tar.xz.sig
