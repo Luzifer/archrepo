@@ -2,12 +2,14 @@ export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz')
 export REPOKEY:=D0391BF9
 
 
-maintanance: aur_update
-#maintanance: repo_update
-maintanance: cleanup_repo
-maintanance: cleanup_orphan_signatures
-maintanance: sign_database
-maintanance: upload
+maintanance: do_updates do_cleanup upload
+
+do_updates: aur_update
+do_updates: repo_update
+
+do_cleanup: cleanup_repo
+do_cleanup: cleanup_orphan_signatures
+do_cleanup: sign_database
 
 download:
 	vault2env --key=secret/aws/private -- aws s3 sync \
