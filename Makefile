@@ -32,6 +32,9 @@ upload: cleanup_files
 aur_update: check_tools check_database
 	bash -euo pipefail -c 'for pkg in $$(script_level=1 ./scripts/check_aur_updates.sh); do script_level=1 ./scripts/update-aur.sh $${pkg}; done'
 
+check_aur_update:
+	bash ./scripts/check_aur_updates.sh
+
 check_database:
 	test -n '$(DATABASE)'
 
