@@ -1,4 +1,4 @@
-export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz')
+export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zstd')
 export REPOKEY:=D0391BF9
 
 
@@ -19,7 +19,7 @@ download:
 		--acl=public-read \
 		s3://arch-luzifer-io/repo/x86_64/ $(CURDIR)/
 
-upload: cleanup_files
+upload: cleanup_files check_archive_mix
 	vault2env --key=secret/aws/private -- aws s3 sync \
 		--delete \
 		--exclude '*.old*' \
@@ -65,3 +65,8 @@ scripts/repoctl.toml:
 
 sign_database:
 	repo-add -s --key $(REPOKEY) $(DATABASE)
+
+# Helpers
+
+check_archive_mix:
+	bash ./scripts/has_archive_mix.sh

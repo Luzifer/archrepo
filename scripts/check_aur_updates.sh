@@ -14,12 +14,12 @@ join_by() {
 declare -A local_versions
 declare -A aur_versions
 
-database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz')
+database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or '*.db.tar.zstd')
 
 aur_query=("https://aur.archlinux.org/rpc/?v=5&type=info")
 
 step "Collecting local package versions..."
-known_packages=$(tar -tf luzifer.db.tar.xz | grep -v /desc | sed -E 's@^(.*)-([^-]+-[0-9]+)/$@\1 \2@')
+known_packages=$(tar -tf ${database} | grep -v /desc | sed -E 's@^(.*)-([^-]+-[0-9]+)/$@\1 \2@')
 
 IFS=$'\n'
 
