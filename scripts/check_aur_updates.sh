@@ -14,7 +14,7 @@ join_by() {
 declare -A local_versions
 declare -A aur_versions
 
-database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or '*.db.tar.zstd')
+database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zstd')
 
 aur_query=("https://aur.archlinux.org/rpc/?v=5&type=info")
 
