@@ -29,5 +29,6 @@ docker run --rm -ti \
 	-v "${TMPDIR}/src:/src" \
 	-v "${TMPDIR}/cfg:/config" \
 	-v "${REPO_DIR}:/repo" \
+	-v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
 	luzifer/arch-repo-builder \
 	"${REPO}"
