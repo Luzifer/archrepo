@@ -54,7 +54,7 @@ for package in "${!local_versions[@]}"; do
 		continue
 	}
 
-	[[ ${local_version} == ${aur_version} ]] || {
+	[ $(vercmp "${local_version}" "${aur_version}") -eq -1 ] && {
 		warn "Package ${package} needs update (${local_version} => ${aur_version})"
 		updates+=("${package}")
 		continue
