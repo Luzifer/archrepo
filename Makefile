@@ -1,4 +1,4 @@
-export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zstd')
+export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zst')
 export REPOKEY:=D0391BF9
 
 
