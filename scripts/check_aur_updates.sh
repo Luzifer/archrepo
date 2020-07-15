@@ -14,18 +14,27 @@ join_by() {
 declare -A local_versions
 declare -A aur_versions
 
+IFS=$'\n'
+
 database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zst')
 
 aur_query=("https://aur.archlinux.org/rpc/?v=5&type=info")
 
 step "Collecting local package versions..."
+
+# Prime the local_versions array from the package list
+for package in $(<aur-packages); do
+	local_versions[${package}]=0.0.0
+done
+
+# Update versions in local_versions from database entries
 known_packages=$(tar -tf ${database} | grep -v /desc | sed -E 's@^(.*)-([^-]+-[0-9]+)/$@\1 \2@')
-
-IFS=$'\n'
-
 for package in ${known_packages}; do
 	name=$(echo "${package}" | cut -d ' ' -f 1)
 	version=$(echo "${package}" | cut -d ' ' -f 2)
+
+	# If there is no entry most likely this is not an AUR package, skip it
+	[[ -n ${local_versions[${name}]:-} ]] || continue
 
 	local_versions[${name}]=${version}
 	aur_query+=("arg[]=${name}")
