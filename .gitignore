@@ -4,5 +4,5 @@
 *.files.sig
 *.tar.xz
 *.tar.xz.sig
-*.tar.zstd
-*.tar.zstd.sig
+*.tar.zst
+*.tar.zst.sig
