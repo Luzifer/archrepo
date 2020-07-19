@@ -12,6 +12,8 @@ google-chrome-dev
 google-cloud-sdk
 gorun
 hfsprogs
+just
+librespeed-cli
 ltwheelconf-git
 madonctl
 mpd-mpris
@@ -31,6 +33,7 @@ steamcmd
 steam-fonts
 ttf-tahoma
 ttf-windows
+ttyd
 usbtop
 vault2env
 vault-bin
