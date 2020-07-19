@@ -2,6 +2,7 @@
 *.db.sig
 *.files
 *.files.sig
+.repo_cache
 *.tar.xz
 *.tar.xz.sig
 *.tar.zst

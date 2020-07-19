@@ -8,6 +8,13 @@ REPO_DIR=${REPO_DIR:-$(pwd)}
 REPO=${1:-}
 [ -z "${REPO}" ] && fail "No repo given as CLI argument"
 
+step "Checking for changes from last build"
+last_remote_hash=$(git ls-remote ${REPO} master | awk '{print $1}')
+grep "${REPO}#${last_remote_hash}" .repo_cache && {
+	warn "Remote has no changes from last build, skipping..."
+	exit 0
+} || true
+
 # Create working dir
 TMPDIR="/tmp/aur2repo_$(basename ${REPO})"
 mkdir -p "${TMPDIR}/cfg"
@@ -32,3 +39,8 @@ docker run --rm -ti \
 	-v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
 	luzifer/arch-repo-builder \
 	"${REPO}"
+
+step "Updating cache entry"
+grep -v "^${REPO}#" .repo_cache >.repo_cache.tmp || true
+echo "${REPO}#${last_remote_hash}" >>.repo_cache.tmp
+mv .repo_cache.tmp .repo_cache
