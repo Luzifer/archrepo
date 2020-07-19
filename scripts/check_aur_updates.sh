@@ -25,6 +25,7 @@ step "Collecting local package versions..."
 # Prime the local_versions array from the package list
 for package in $(<aur-packages); do
 	local_versions[${package}]=0.0.0
+	aur_query+=("arg[]=${package}")
 done
 
 # Update versions in local_versions from database entries
@@ -37,7 +38,6 @@ for package in ${known_packages}; do
 	[[ -n ${local_versions[${name}]:-} ]] || continue
 
 	local_versions[${name}]=${version}
-	aur_query+=("arg[]=${name}")
 done
 
 step "Fetching AUR package versions..."
