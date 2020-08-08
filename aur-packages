@@ -5,12 +5,14 @@ consul-bin
 direnv
 dust
 envrun
+gofumpt-git
 google-chrome
 google-chrome-beta
 google-chrome-dev
 google-cloud-sdk
 gorun
 hfsprogs
+jiq
 just
 librespeed-cli
 ltwheelconf-git
