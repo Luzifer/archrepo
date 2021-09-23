@@ -22,7 +22,7 @@ step "Fetching signing key"
 vault read --field=key secret/jenkins/arch-signing >"${TMPDIR}/cfg/signing.asc"
 
 step "Re-fetching Docker image"
-docker pull luzifer/arch-repo-builder
+docker pull gcr.io/luzifer-registry/arch-repo-builder
 
 step "Building AUR package ${PACKAGE}"
 docker run --rm -ti \
@@ -30,5 +30,5 @@ docker run --rm -ti \
 	-v "${TMPDIR}/cfg:/config" \
 	-v "${REPO_DIR}:/repo" \
 	-v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
-	luzifer/arch-repo-builder \
+	gcr.io/luzifer-registry/arch-repo-builder \
 	"https://aur.archlinux.org/${PACKAGE}.git"
