@@ -2,7 +2,7 @@ export DATABASE:=$(shell find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or 
 export REPOKEY:=D0391BF9
 
 
-maintanance: do_updates do_cleanup upload
+maintanance: do_updates do_cleanup list_packages upload
 
 do_updates: aur_update
 do_updates: repo_update
@@ -40,6 +40,7 @@ check_database:
 
 check_tools:
 	@which aws
+	@which column
 	@which curl
 	@which docker
 	@which jq
@@ -57,7 +58,10 @@ cleanup_orphan_signatures: check_database
 cleanup_repo: check_tools check_database scripts/repoctl.toml
 	repoctl update
 
-repo_update: check_tools check_database
+list_packages:
+	tar -tf luzifer.db.tar.xz | grep -v '/desc' | sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' | sort | column -t >packages.txt
+
+repo_update: check_tools check_database load_ssh_key
 	bash -euo pipefail -c 'for repo in $$(grep -v "^#" repo-urls); do script_level=1 ./scripts/update-repo.sh $${repo}; done'
 
 scripts/repoctl.toml:
@@ -70,3 +74,6 @@ sign_database:
 
 check_archive_mix:
 	bash ./scripts/has_archive_mix.sh
+
+load_ssh_key:
+	vault-sshadd loki
