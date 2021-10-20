@@ -7,6 +7,9 @@ https://github.com/Luzifer/arch-update.git
 # Brother QL-500 drivers
 https://github.com/luzifer-aur/brother-ql500.git
 
+# CEF version tailored for OBS-Browser
+https://github.com/luzifer-aur/cef-minimal-obs.git
+
 # Discord
 https://github.com/luzifer-aur/discord.git
 
