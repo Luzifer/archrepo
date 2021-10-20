@@ -1,7 +1,7 @@
 export REPO_DIR:=$(CURDIR)/repo
 export REPOKEY:=D0391BF9
 export RETAIN:=1
-export DATABASE:=$(shell find $(REPO_DIR) -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zst')
+export DATABASE:=$(REPO_DIR)/luzifer.db.tar.zst
 
 
 maintanance: do_updates do_cleanup list_packages upload
@@ -12,6 +12,7 @@ do_updates: repo_update
 do_cleanup: cleanup_repo
 do_cleanup: cleanup_orphan_signatures
 do_cleanup: sign_database
+do_cleanup: cleanup_files
 
 download:
 	vault2env --key=secret/aws/private -- aws s3 sync \
@@ -58,6 +59,9 @@ cleanup_orphan_signatures:
 
 cleanup_repo: check_tools
 	bash ./scripts/do_cleanup.sh
+
+clear_database:
+	rm -f $(REPO_DIR)/*.db* $(REPO_DIR)/*.files*
 
 list_packages:
 	tar -tf $(DATABASE) | grep -v '/desc' | sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' | sort | column -t >$(REPO_DIR)/packages.txt

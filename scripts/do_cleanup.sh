@@ -10,10 +10,6 @@ syncdir="${REPO_DIR:-$(pwd)}"
 log "Cleaning up old package versions..."
 BASE_PATH="${syncdir}" python scripts/remove_old_versions.py
 
-# Ensure removal of previous repo files
-log "Cleaning up old database files..."
-find "${syncdir}" -regextype egrep -regex '^.*\.(db|files)(|\.tar|\.tar\.xz|\.tar\.zst)$' -delete
-
 log "Adding remaining packages to database..."
 packages=($(find "${syncdir}" -regextype egrep -regex '^.*\.pkg\.tar(\.xz|\.zst)$' | sort))
 
@@ -23,7 +19,7 @@ if [ "${#packages[@]}" -eq 0 ]; then
 fi
 
 log "Adding packages..."
-repo-add --new --prevent-downgrade "${syncdir}/luzifer.db.tar.xz" "${packages[@]}"
+repo-add --new --prevent-downgrade "${DATABASE}" "${packages[@]}"
 
 log "All packages added, removing *.old copies..."
 find "${syncdir}" -name '*.old' -delete
