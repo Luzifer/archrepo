@@ -51,7 +51,7 @@ check_tools:
 	@which vault2env
 
 cleanup_files:
-	rm -f *.old*
+	rm -f $(REPO_DIR)/*.old*
 
 cleanup_orphan_signatures:
 	bash -euo pipefail -c 'for i in $(REPO_DIR)/*.sig; do [[ -f $${i//.sig} ]] || rm $${i}; done'
