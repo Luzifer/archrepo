@@ -16,7 +16,7 @@ declare -A aur_versions
 
 IFS=$'\n'
 
-database=$(find . -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zst')
+database=$(find ${REPO_DIR:-$(pwd)} -maxdepth 1 -mindepth 1 -name '*.db.tar.xz' -or -name '*.db.tar.zst')
 
 aur_query=("https://aur.archlinux.org/rpc/?v=5&type=info")
 

@@ -3,6 +3,7 @@
 *.files
 *.files.sig
 packages.txt
+repo
 .repo_cache
 *.tar.xz
 *.tar.xz.sig
