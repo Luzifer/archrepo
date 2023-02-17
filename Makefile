@@ -6,7 +6,6 @@ export DATABASE:=$(REPO_DIR)/luzifer.db.tar.zst
 
 maintanance: do_updates do_cleanup list_packages upload
 
-do_updates: aur_update
 do_updates: repo_update
 
 do_cleanup: cleanup_repo
@@ -31,12 +30,6 @@ upload: cleanup_files check_archive_mix
 		$(REPO_DIR)/ s3://arch-luzifer-io/repo/x86_64/
 
 # Maintenance targets
-
-aur_update: check_tools check_database
-	bash -euo pipefail -c 'for pkg in $$(script_level=1 ./scripts/check_aur_updates.sh); do script_level=1 ./scripts/update-aur.sh $${pkg}; done'
-
-check_aur_update: check_database
-	bash ./scripts/check_aur_updates.sh
 
 check_database:
 	test -n '$(DATABASE)'
