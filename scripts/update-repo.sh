@@ -11,8 +11,8 @@ REPO=${1:-}
 step "Checking for changes from last build"
 last_remote_hash=$(git ls-remote ${REPO} master | awk '{print $1}')
 grep "${REPO}#${last_remote_hash}" .repo_cache && {
-	warn "Remote has no changes from last build, skipping..."
-	exit 0
+  warn "Remote has no changes from last build, skipping..."
+  exit 0
 } || true
 
 # Create working dir
@@ -21,7 +21,7 @@ mkdir -p "${TMPDIR}/cfg"
 
 # Ensure cleanup on script exit
 function cleanup() {
-	rm -rf "${TMPDIR}"
+  rm -rf "${TMPDIR}"
 }
 trap cleanup EXIT
 
@@ -33,12 +33,13 @@ docker pull gcr.io/luzifer-registry/arch-repo-builder
 
 step "Building package $(basename ${REPO})"
 docker run --rm -ti \
-	-v "${TMPDIR}/src:/src" \
-	-v "${TMPDIR}/cfg:/config" \
-	-v "${REPO_DIR}:/repo" \
-	-v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
-	gcr.io/luzifer-registry/arch-repo-builder \
-	"${REPO}"
+  -v "${TMPDIR}/src:/src" \
+  -v "${TMPDIR}/cfg:/config" \
+  -v "${REPO_DIR}:/repo" \
+  -v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
+  --ulimit nofile=262144:262144 \
+  gcr.io/luzifer-registry/arch-repo-builder \
+  "${REPO}"
 
 step "Updating cache entry"
 grep -v "^${REPO}#" .repo_cache >.repo_cache.tmp || true
