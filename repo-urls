@@ -1,41 +1,69 @@
-# Arch base setup
-https://github.com/luzifer-aur/luzifer.git
-
-# arch-update
 https://github.com/Luzifer/arch-update.git
 
-# babel-eslint-parser
+https://github.com/luzifer-aur/archisteamfarm-bin.git
 https://github.com/luzifer-aur/babel-eslint-parser.git
-
-# Brother QL-500 drivers
+https://github.com/luzifer-aur/beekeeper-studio-bin.git
 https://github.com/luzifer-aur/brother-ql500.git
-
-# CEF version tailored for OBS-Browser
 https://github.com/luzifer-aur/cef-minimal-obs.git
-
-# Discord
 https://github.com/luzifer-aur/discord.git
-
-# elb-instance-status
 https://github.com/luzifer-aur/elb-instance-status.git
+https://github.com/luzifer-aur/envrun.git
+https://github.com/luzifer-aur/eslint-plugin-vue.git
+https://github.com/luzifer-aur/gofumpt.git
+https://github.com/luzifer-aur/google-chrome-beta.git
+https://github.com/luzifer-aur/google-chrome-dev.git
+https://github.com/luzifer-aur/google-chrome.git
+https://github.com/luzifer-aur/he-tunnel.git
+https://github.com/luzifer-aur/korvike.git
+https://github.com/luzifer-aur/librespeed-cli.git
+https://github.com/luzifer-aur/luzifer.git
+https://github.com/luzifer-aur/nerd-fonts-dejavu-complete.git
+https://github.com/luzifer-aur/obs-studio-browser.git
+https://github.com/luzifer-aur/streamdeck.git
+https://github.com/luzifer-aur/vault2env.git
+https://github.com/luzifer-aur/vault-bin.git
+https://github.com/luzifer-aur/vercel.git
+https://github.com/luzifer-aur/vim-go-tools.git
+
+https://aur.archlinux.org/adobe-base-14-fonts.git
+https://aur.archlinux.org/ausweisapp2.git
+https://aur.archlinux.org/babel-eslint.git
+https://aur.archlinux.org/cargo-make.git
+https://aur.archlinux.org/cef-minimal.git
+https://aur.archlinux.org/consul-bin.git
+#https://aur.archlinux.org/dog-dns-git.git  # NOTE(kahlers): Broken as of 2023-02-17
+https://aur.archlinux.org/espanso.git
+https://aur.archlinux.org/exa-git.git
+https://aur.archlinux.org/golangci-lint-bin.git
+https://aur.archlinux.org/google-cloud-sdk.git
+https://aur.archlinux.org/gorun.git
+https://aur.archlinux.org/hfsprogs.git
+#https://aur.archlinux.org/jiq.git  # NOTE(kahlers): Broken as of 2023-02-17
+https://aur.archlinux.org/kubelogin.git
+https://aur.archlinux.org/libajantv2.git
+https://aur.archlinux.org/mozjpeg.git
+https://aur.archlinux.org/mpd-mpris.git
+https://aur.archlinux.org/obs-cli.git
+https://aur.archlinux.org/oh-my-posh-bin.git
+https://aur.archlinux.org/platformio.git
+https://aur.archlinux.org/python-ajsonrpc.git
+https://aur.archlinux.org/python-json-rpc.git
+https://aur.archlinux.org/python-pulsectl.git
+https://aur.archlinux.org/python-vdf.git
+https://aur.archlinux.org/qflipper-git.git
+https://aur.archlinux.org/rdm-bin.git
+#https://aur.archlinux.org/rustdesk.git  # NOTE(kahlers): Broken as of 2023-02-17
+https://aur.archlinux.org/spotify.git
+https://aur.archlinux.org/teams.git
+https://aur.archlinux.org/thinkfan.git
+https://aur.archlinux.org/ulauncher.git
+https://aur.archlinux.org/usbtop.git
+https://aur.archlinux.org/wrk.git
+https://aur.archlinux.org/xflux.git
+https://aur.archlinux.org/yay.git
 
 # getxkblayout
 https://gist.github.com/dccae45747a1dad41f011a01c75296a3.git
 
-# he-tunnel
-https://github.com/luzifer-aur/he-tunnel.git
-
-# obs-studio-browser
-https://github.com/luzifer-aur/obs-studio-browser.git
-
 # ttf-windows
 https://gist.github.com/62a861982991afa8843b8922cb40abfc.git
-
-# Vault Bin
-https://github.com/luzifer-aur/vault-bin.git
-
-# vercel CLI
-https://github.com/luzifer-aur/vercel.git
-
-# vim-go-tools
-https://github.com/luzifer-aur/vim-go-tools.git
