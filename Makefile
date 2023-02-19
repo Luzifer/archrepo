@@ -12,6 +12,7 @@ do_cleanup: cleanup_repo
 do_cleanup: cleanup_orphan_signatures
 do_cleanup: sign_database
 do_cleanup: cleanup_files
+do_cleanup: list_packages
 
 download:
 	vault2env --key=secret/aws/private -- aws s3 sync \
