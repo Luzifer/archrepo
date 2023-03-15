@@ -32,14 +32,13 @@ https://aur.archlinux.org/babel-eslint.git
 https://aur.archlinux.org/cargo-make.git
 https://aur.archlinux.org/cef-minimal.git
 https://aur.archlinux.org/consul-bin.git
-#https://aur.archlinux.org/dog-dns-git.git  # NOTE(kahlers): Broken as of 2023-02-17
+#https://aur.archlinux.org/dog-dns-git.git  # NOTE(kahlers): Broken as of 2023-03-15
 https://aur.archlinux.org/espanso.git
 https://aur.archlinux.org/exa-git.git
 https://aur.archlinux.org/golangci-lint-bin.git
 https://aur.archlinux.org/google-cloud-sdk.git
 https://aur.archlinux.org/gorun.git
 https://aur.archlinux.org/hfsprogs.git
-#https://aur.archlinux.org/jiq.git  # NOTE(kahlers): Broken as of 2023-02-17
 https://aur.archlinux.org/kubelogin.git
 https://aur.archlinux.org/libajantv2.git
 https://aur.archlinux.org/mozjpeg.git
@@ -53,7 +52,7 @@ https://aur.archlinux.org/python-pulsectl.git
 https://aur.archlinux.org/python-vdf.git
 https://aur.archlinux.org/qflipper-git.git
 https://aur.archlinux.org/rdm-bin.git
-#https://aur.archlinux.org/rustdesk.git  # NOTE(kahlers): Broken as of 2023-02-17
+#https://aur.archlinux.org/rustdesk.git  # NOTE(kahlers): Broken as of 2023-03-15
 https://aur.archlinux.org/spotify.git
 https://aur.archlinux.org/teams.git
 https://aur.archlinux.org/thinkfan.git
