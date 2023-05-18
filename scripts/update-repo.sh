@@ -29,7 +29,7 @@ step "Fetching signing key"
 vault read --field=key secret/jenkins/arch-signing >"${TMPDIR}/cfg/signing.asc"
 
 step "Re-fetching Docker image"
-docker pull gcr.io/luzifer-registry/arch-repo-builder
+docker pull git.luzifer.io/registry/arch-repo-builder
 
 step "Building package $(basename ${REPO})"
 docker run --rm -ti \
@@ -38,7 +38,7 @@ docker run --rm -ti \
   -v "${REPO_DIR}:/repo" \
   -v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
   --ulimit nofile=262144:262144 \
-  gcr.io/luzifer-registry/arch-repo-builder \
+  git.luzifer.io/registry/arch-repo-builder \
   "${REPO}"
 
 step "Updating cache entry"
