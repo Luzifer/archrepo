@@ -1,0 +1,26 @@
+###                                                                         ###
+# Luzifer.io - ArchRepo                                                       #
+###                                                                         ###
+
+Pay attention: This is NOT an official Archlinux repository! You probably
+should neither trust nor use the packages contained in this repository.
+
+This is a private repo for my own systems to pull pre-built packages from,
+therefore packages can and will vanish, get modified or added. Basically
+don't rely on anything in here!
+
+If you want to setup your own repository refer to these resources:
+
+  - https://wiki.archlinux.org/title/Category:Package_management
+  - https://github.com/Luzifer/archrepo
+
+Copy & Paste usage:
+
+    [luzifer]
+    SigLevel = Required
+    Server = https://archrepo.hub.luzifer.io/$arch
+
+###                                                                         ###
+# Packages                                                                    #
+###                                                                         ###
+

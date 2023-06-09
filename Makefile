@@ -48,7 +48,8 @@ clear_database:
 	rm -f $(REPO_DIR)/*.db* $(REPO_DIR)/*.files*
 
 list_packages:
-	tar -tf $(DATABASE) | grep -v '/desc' | sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' | sort | column -t >$(REPO_DIR)/packages.txt
+	cp ./scripts/packages.hdr.txt $(REPO_DIR)/packages.txt
+	tar -tf $(DATABASE) | grep -v '/desc' | sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' | sort | column -t >>$(REPO_DIR)/packages.txt
 
 repo_update: check_tools load_ssh_key
 	bash -euo pipefail -c 'for repo in $$(grep -v "^#" repo-urls); do script_level=1 ./scripts/update-repo.sh $${repo}; done'
