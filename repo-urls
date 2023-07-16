@@ -30,6 +30,7 @@ https://aur.archlinux.org/ausweisapp2.git
 https://aur.archlinux.org/babel-eslint.git
 https://aur.archlinux.org/cargo-make.git
 https://aur.archlinux.org/cef-minimal.git
+https://aur.archlinux.org/cinny-desktop.git
 https://aur.archlinux.org/consul-bin.git
 #https://aur.archlinux.org/dog-dns-git.git  # NOTE(kahlers): Broken as of 2023-03-15
 https://aur.archlinux.org/espanso.git
@@ -41,10 +42,12 @@ https://aur.archlinux.org/helm-2to3.git
 https://aur.archlinux.org/hfsprogs.git
 https://aur.archlinux.org/kubelogin.git
 https://aur.archlinux.org/libajantv2.git
+https://aur.archlinux.org/micronucleus.git
 https://aur.archlinux.org/mozjpeg.git
 https://aur.archlinux.org/mpd-mpris.git
 https://aur.archlinux.org/obs-cli.git
 https://aur.archlinux.org/oh-my-posh-bin.git
+https://aur.archlinux.org/pcsc-cyberjack.git
 https://aur.archlinux.org/platformio.git
 https://aur.archlinux.org/python-ajsonrpc.git
 https://aur.archlinux.org/python-json-rpc.git
