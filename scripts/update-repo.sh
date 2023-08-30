@@ -32,11 +32,18 @@ step "Re-fetching Docker image"
 docker pull git.luzifer.io/registry/arch-repo-builder
 
 step "Building package $(basename ${REPO})"
+extra_opts=()
+if [[ -f /etc/pacman.d/mirrorlist ]]; then
+  info "Using host system mirrorlist..."
+  extra_opts+=(-v "/etc/pacman.d/mirrorlist:/etc/pacman.d/mirrorlist:ro")
+fi
+
 docker run --rm -ti \
   -v "${TMPDIR}/src:/src" \
   -v "${TMPDIR}/cfg:/config" \
   -v "${REPO_DIR}:/repo" \
   -v "$(pwd)/scripts/pacman.conf:/etc/pacman.conf:ro" \
+  "${extra_opts[@]}" \
   --ulimit nofile=262144:262144 \
   git.luzifer.io/registry/arch-repo-builder \
   "${REPO}"
