@@ -5,6 +5,7 @@ https://git.luzifer.io/luzifer-arch/babel-eslint-parser.git
 https://git.luzifer.io/luzifer-arch/beekeeper-studio-bin.git
 https://git.luzifer.io/luzifer-arch/cef-minimal-obs.git
 https://git.luzifer.io/luzifer-arch/chatterino2-dankerino-git.git
+https://git.luzifer.io/luzifer-arch/cockroachdb-bin.git
 https://git.luzifer.io/luzifer-arch/discord.git
 https://git.luzifer.io/luzifer-arch/elb-instance-status.git
 https://git.luzifer.io/luzifer-arch/envrun.git
@@ -14,6 +15,7 @@ https://git.luzifer.io/luzifer-arch/google-chrome-beta.git
 https://git.luzifer.io/luzifer-arch/google-chrome-dev.git
 https://git.luzifer.io/luzifer-arch/google-chrome.git
 https://git.luzifer.io/luzifer-arch/he-tunnel.git
+https://git.luzifer.io/luzifer-arch/k9s.git
 https://git.luzifer.io/luzifer-arch/korvike.git
 https://git.luzifer.io/luzifer-arch/librespeed-cli.git
 https://git.luzifer.io/luzifer-arch/luzifer.git
@@ -54,6 +56,7 @@ https://aur.archlinux.org/python-json-rpc.git
 https://aur.archlinux.org/python-pulsectl.git
 https://aur.archlinux.org/python-vdf.git
 https://aur.archlinux.org/qflipper-git.git
+https://aur.archlinux.org/qrcodegen-cmake.git
 https://aur.archlinux.org/rasdaemon.git
 https://aur.archlinux.org/rdm-bin.git
 #https://aur.archlinux.org/rustdesk.git  # NOTE(kahlers): Broken as of 2023-03-15
