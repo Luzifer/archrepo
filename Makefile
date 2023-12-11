@@ -48,11 +48,10 @@ clear_database:
 	rm -f $(REPO_DIR)/*.db* $(REPO_DIR)/*.files*
 
 list_packages:
-	cp ./scripts/packages.hdr.txt $(REPO_DIR)/packages.txt
-	tar -tf $(DATABASE) | grep -v '/desc' | sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' | sort | column -t >>$(REPO_DIR)/packages.txt
+	bash ./scripts/listing.sh >$(REPO_DIR)/packages.txt
 
 repo_update: check_tools load_ssh_key
-	bash -euo pipefail -c 'for repo in $$(grep -v "^#" repo-urls); do script_level=1 ./scripts/update-repo.sh $${repo}; done'
+	bash -euo pipefail -c 'for repo in $$(grep -v "^#" repo-urls | cut -d "#" -f 1); do script_level=1 ./scripts/update-repo.sh $${repo}; done'
 
 sign_database:
 	repo-add -s --key $(REPOKEY) $(DATABASE)
