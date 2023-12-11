@@ -33,8 +33,6 @@ https://aur.archlinux.org/babel-eslint.git
 https://aur.archlinux.org/cargo-make.git
 https://aur.archlinux.org/cef-minimal.git
 https://aur.archlinux.org/cinny-desktop.git
-https://aur.archlinux.org/consul-bin.git
-#https://aur.archlinux.org/dog-dns-git.git  # NOTE(kahlers): Broken as of 2023-03-15
 https://aur.archlinux.org/espanso.git
 https://aur.archlinux.org/exa-git.git
 https://aur.archlinux.org/golangci-lint-bin.git
@@ -59,12 +57,12 @@ https://aur.archlinux.org/qflipper-git.git
 https://aur.archlinux.org/qrcodegen-cmake.git
 https://aur.archlinux.org/rasdaemon.git
 https://aur.archlinux.org/rdm-bin.git
-https://aur.archlinux.org/vcpkg.git  # NOTE(kahlers): Dependency of rustdesk
 https://aur.archlinux.org/rustdesk.git
 https://aur.archlinux.org/spotify.git
 https://aur.archlinux.org/thinkfan.git
 https://aur.archlinux.org/ulauncher.git
 https://aur.archlinux.org/usbtop.git
+https://aur.archlinux.org/vcpkg.git  # NOTE(kahlers): Dependency of rustdesk
 https://aur.archlinux.org/wrk.git
 https://aur.archlinux.org/xflux.git
 https://aur.archlinux.org/yay.git
