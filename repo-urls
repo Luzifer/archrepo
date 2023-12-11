@@ -59,7 +59,8 @@ https://aur.archlinux.org/qflipper-git.git
 https://aur.archlinux.org/qrcodegen-cmake.git
 https://aur.archlinux.org/rasdaemon.git
 https://aur.archlinux.org/rdm-bin.git
-#https://aur.archlinux.org/rustdesk.git  # NOTE(kahlers): Broken as of 2023-03-15
+https://aur.archlinux.org/vcpkg.git  # NOTE(kahlers): Dependency of rustdesk
+https://aur.archlinux.org/rustdesk.git
 https://aur.archlinux.org/spotify.git
 https://aur.archlinux.org/thinkfan.git
 https://aur.archlinux.org/ulauncher.git
