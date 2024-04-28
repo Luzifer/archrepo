@@ -15,10 +15,10 @@ do_cleanup: cleanup_files
 do_cleanup: list_packages
 
 download:
-	vault2env --key secret/minio/archrepo -- s3sync --delete s3://archrepo/x86_64/ $(REPO_DIR)/
+	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete s3://archrepo/x86_64/ $(REPO_DIR)/"
 
 upload: cleanup_files check_archive_mix
-	vault2env --key secret/minio/archrepo -- s3sync --delete $(REPO_DIR)/ s3://archrepo/x86_64/
+	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete $(REPO_DIR)/ s3://archrepo/x86_64/"
 
 # Maintenance targets
 
