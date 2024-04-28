@@ -24,6 +24,7 @@ https://git.luzifer.io/luzifer-arch/obs-studio-browser.git
 https://git.luzifer.io/luzifer-arch/streamdeck.git
 https://git.luzifer.io/luzifer-arch/vault2env.git
 https://git.luzifer.io/luzifer-arch/vault-bin.git
+https://git.luzifer.io/luzifer-arch/vault-user-token.git
 https://git.luzifer.io/luzifer-arch/vercel.git
 https://git.luzifer.io/luzifer-arch/vim-go-tools.git
 
@@ -33,6 +34,8 @@ https://aur.archlinux.org/babel-eslint.git
 https://aur.archlinux.org/cargo-make.git
 https://aur.archlinux.org/cef-minimal.git
 https://aur.archlinux.org/cinny-desktop.git
+https://aur.archlinux.org/cnquery.git
+https://aur.archlinux.org/cnspec.git
 https://aur.archlinux.org/espanso.git
 https://aur.archlinux.org/exa-git.git
 https://aur.archlinux.org/golangci-lint-bin.git
@@ -40,13 +43,19 @@ https://aur.archlinux.org/google-cloud-sdk.git
 https://aur.archlinux.org/gorun.git
 https://aur.archlinux.org/helm-2to3.git
 https://aur.archlinux.org/hfsprogs.git
+https://aur.archlinux.org/hoppscotch-bin.git
 https://aur.archlinux.org/kubelogin.git
 https://aur.archlinux.org/libajantv2.git
+https://aur.archlinux.org/masterpdfeditor-free
+https://aur.archlinux.org/masterpdfeditor
 https://aur.archlinux.org/micronucleus.git
 https://aur.archlinux.org/mozjpeg.git
 https://aur.archlinux.org/mpd-mpris.git
+https://aur.archlinux.org/nvm.git
 https://aur.archlinux.org/obs-cli.git
 https://aur.archlinux.org/oh-my-posh-bin.git
+https://aur.archlinux.org/orca-slicer-bin.git
+https://aur.archlinux.org/packer-plugin-arm-image.git
 https://aur.archlinux.org/pcsc-cyberjack.git
 https://aur.archlinux.org/platformio.git
 https://aur.archlinux.org/python-ajsonrpc.git
@@ -56,11 +65,12 @@ https://aur.archlinux.org/python-vdf.git
 https://aur.archlinux.org/qflipper-git.git
 https://aur.archlinux.org/qrcodegen-cmake.git
 https://aur.archlinux.org/rasdaemon.git
-https://aur.archlinux.org/rdm-bin.git
-https://aur.archlinux.org/rustdesk.git
+https://aur.archlinux.org/redisinsight-deb.git
+#https://aur.archlinux.org/rustdesk.git # Broken as of 2024-04-03
 https://aur.archlinux.org/spotify.git
 https://aur.archlinux.org/thinkfan.git
-https://aur.archlinux.org/ulauncher.git
+https://aur.archlinux.org/ttf-harmonyos-sans.git  # NOTE(kahlers): Dependency of orca-slicer
+#https://aur.archlinux.org/ulauncher.git # Broken as of 2024-04-28 (Py 3.12)
 https://aur.archlinux.org/usbtop.git
 https://aur.archlinux.org/vcpkg.git  # NOTE(kahlers): Dependency of rustdesk
 https://aur.archlinux.org/wrk.git
@@ -72,3 +82,5 @@ https://gist.github.com/dccae45747a1dad41f011a01c75296a3.git
 
 # ttf-windows
 https://gist.github.com/62a861982991afa8843b8922cb40abfc.git
+
+# vim: set ft=conf :
