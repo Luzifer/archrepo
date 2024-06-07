@@ -51,7 +51,7 @@ list_packages:
 	bash ./scripts/listing.sh >$(REPO_DIR)/packages.txt
 
 repo_update: check_tools load_ssh_key
-	bash -euo pipefail -c 'for repo in $$(grep -v "^#" repo-urls | cut -d "#" -f 1); do script_level=1 ./scripts/update-repo.sh $${repo}; done'
+	bash ./scripts/update-all.sh
 
 sign_database:
 	repo-add -s --key $(REPOKEY) $(DATABASE)

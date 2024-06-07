@@ -10,7 +10,7 @@ This repository contains four essential parts:
 
 - The `scripts` folder containing bash scripts to control all actions
 - The `Makefile` to orchestrate everything. The main functionality is the `maintenance` target (or just `make`)
-- The package lists (`aur-packages` and `repo-urls`)
+- The package lists in `repo-urls`
 - The `repo/luzifer.asc` public key
 
 It currently relies on my [`luzifer/arch-repo-builder`](https://github.com/luzifer-docker/arch-repo-builder) docker image which does all of the building within a clean environment for each package.
@@ -20,9 +20,7 @@ For the initial setup you need to do some steps:
 - Adjust the `Makefile` as you need different `download` and `upload` targets
 - Create an empty database `tar -cJf repo/luzifer.db.tar.xz -T /dev/null` (adjust the filename)
 - Put the public key for your repo into `repo/luzifer.asc` (filename should match the database, makes it easier to find)
-- Set up your `aur-packages` and `repo-urls` package lists
-  - `aur-packages` contains just names of AUR packages (no comments or other stuff!)
-  - `repo-urls` contains one git repository URL per line (comments allowed)
+- Set up your `repo-urls` package list: it contains one git repository URL per line (comments allowed)
 - Provide a docker daemon and all tools listed in the `check_tools` target of the `Makefile`
 
 Afterwards you should be good to just `make` your first build. Depending on the number of packages you selected to be in your repo you might go and fetch dinner while it builds.
@@ -34,5 +32,4 @@ The repo should be updated on a regular base by just executing `make` on it. Thi
 ## Flaws / Remarks / TODOs
 
 - The whole build already strongly relies on Archlinux tools so will not run on any other distro
-- For `aur-packages` having dynamic `pkgver` calculation the update check will not work properly until the `PKGBUILD` in AUR is updated (those packages can be built manually using `bash ./scripts/update-aur.sh <packagename> && make do_cleanup upload`
-- For `repo-urls` the same applies: for example my `vim-go-tools` package relies on periodic re-builds which are not executed as commits are quite rare. For those packages at the moment a call to `bash ./scripts/update-repo.sh <url> && make do_cleanup upload` is required
+- For packages having dynamic `pkgver` calculation the update check will not work properly until the `PKGBUILD` in the repo is updated. You can force a rebuild by removing the corresponding line from the `.repo_cache`
