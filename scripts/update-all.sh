@@ -109,7 +109,7 @@ function write_status() {
   local wipe=$(echo -en "\r$(printf "%-${last_line_len}s" "")")
 
   # Assemble new line
-  local line=$(echo -en "\r${icon} \e[1m${name##*/}\e[0m - ${comment}")
+  local line=$(echo -en "\r ${icon} \e[1m${name##*/}\e[0m - ${comment}")
   # Count line length for later wipe
   last_line_len=$(wc -c <<<"${line}")
   # Print line
