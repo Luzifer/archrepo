@@ -85,7 +85,7 @@ function update() {
   local exitcode=$(docker inspect ${container} | jq -r '.[0].State.ExitCode')
   if [ $exitcode -gt 0 ]; then
     local logfile="/tmp/arch-package-build_$(basename ${repo}).log"
-    docker logs ${container} 2>&1 >${logfile}
+    docker logs ${container} >${logfile} 2>&1
     write_status FAIL ${repo} "Build failed (${exitcode}), see logs at ${logfile}"
   else
     write_status SUCCESS ${repo} "Updating cache entry..."
