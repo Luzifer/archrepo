@@ -11,4 +11,4 @@ cat scripts/packages.hdr.txt
     buildtime=$(date -u -d @$(tar -xf ${DATABASE} --to-stdout "${pkg}desc" | grep -A1 '%BUILDDATE%' | tail -n1))
     echo -e "$(sed -E 's/(.*)-([^-]+-[0-9]+)\//\1\t\2/' <<<"${pkg}")\t${buildtime}"
   done
-} | sort | column -t -s "$(printf "\t")" -N 'Package,Version,Build-Time'
+} | grep -v -- '-debug' | sort | column -t -s "$(printf "\t")" -N 'Package,Version,Build-Time'
