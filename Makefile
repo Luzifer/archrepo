@@ -58,8 +58,5 @@ sign_database:
 
 # Helpers
 
-check_archive_mix:
-	bash ./scripts/has_archive_mix.sh
-
 load_ssh_key:
 	vault-sshadd loki
