@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BUILD_IMAGE="git.luzifer.io/registry/arch-repo-builder"
+BUILD_IMAGE="ghcr.io/luzifer-docker/arch-repo-builder:latest"
 declare -A ICON=(
   ["CHECK"]=$(printf "\e[34m\u3f\e[0m")
   ["FAIL"]=$(printf "\e[31m\uf05e\e[0m")
