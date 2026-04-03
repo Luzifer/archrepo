@@ -49,6 +49,8 @@ packages:
     repo: https://git.luzifer.io/luzifer-arch/streamdeck.git
   telegraf-bin:
     repo: https://git.luzifer.io/luzifer-arch/telegraf-bin.git
+  ttf-windows:
+    repo: https://git.luzifer.io/luzifer-arch/ttf-windows.git
   vault2env:
     repo: https://git.luzifer.io/luzifer-arch/vault2env.git
   vault-bin:
@@ -62,8 +64,6 @@ packages:
 
   getxkblayout:
     repo: https://gist.github.com/dccae45747a1dad41f011a01c75296a3.git
-  ttf-windows:
-    repo: https://gist.github.com/62a861982991afa8843b8922cb40abfc.git
 
   abcde:
     repo: https://aur.archlinux.org/abcde.git
