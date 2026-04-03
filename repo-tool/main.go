@@ -23,6 +23,7 @@ var (
 		BuildImage              string `flag:"build-image" vardefault:"buildimg" description:"Image to use for Arch-RepoBuilder"`
 		Cache                   string `flag:"cache" default:".repo_cache.yaml" description:"Cache file to hold the previous builds"`
 		Config                  string `flag:"config,c" default:"repo-urls.yaml" description:"Configuration holding the packages to build"`
+		ErrorOnFailedBuilds     bool   `flag:"error-on-failed-builds,e" default:"false" description:"Exit non-zero when any build failed"`
 		LogLevel                string `flag:"log-level" default:"info" description:"Log level (debug, info, warn, error, fatal)"`
 		PacmanConf              string `flag:"pacman-config" default:"scripts/pacman.conf" description:"Which pacman config to mount into the build container"`
 		RemoveUnmanagedPackages bool   `flag:"remove-unmanaged-packages" default:"true" description:"Remove packages not mentioned in the config"`
@@ -129,5 +130,10 @@ func run(ctx context.Context) (exitCode int, err error) {
 		"packages": strings.Join(failedPackages, ","),
 	}).Error("builds completed with failures")
 
-	return 1, nil
+	if cfg.ErrorOnFailedBuilds {
+		// Flags asked to exit with error status for failed builds
+		return 1, nil
+	}
+
+	return 0, nil
 }
