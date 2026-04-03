@@ -1,3 +1,4 @@
+BUILD_IMAGE := ghcr.io/luzifer-docker/arch-repo-builder:latest
 export REPO_DIR:=$(CURDIR)/repo
 export REPOKEY:=D0391BF9
 export RETAIN:=1
@@ -17,7 +18,7 @@ do_cleanup: list_packages
 download:
 	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete s3://archrepo/x86_64/ $(REPO_DIR)/"
 
-upload: cleanup_files check_archive_mix
+upload: cleanup_files
 	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete $(REPO_DIR)/ s3://archrepo/x86_64/"
 
 # Maintenance targets
@@ -50,8 +51,17 @@ clear_database:
 list_packages:
 	bash ./scripts/listing.sh >$(REPO_DIR)/packages.txt
 
-repo_update: check_tools load_ssh_key
-	bash ./scripts/update-all.sh
+repo_update: check_tools load_ssh_key repo-tool/repo-tool
+	repo-tool/repo-tool \
+		--build-image=$(BUILD_IMAGE) \
+		--cache=$(CURDIR)/.repo_cache.yaml \
+		--config=$(CURDIR)/repo-urls.yaml \
+		--pacman-config=$(CURDIR)/scripts/pacman.conf \
+		--remove-unmanaged-packages=true \
+		--repo-dir=$(REPO_DIR) \
+		--show-already-built=false \
+		--signing-vault-key=secret/jenkins/arch-signing
+
 
 sign_database:
 	repo-add -s --key $(REPOKEY) $(DATABASE)
@@ -60,3 +70,6 @@ sign_database:
 
 load_ssh_key:
 	vault-sshadd loki
+
+repo-tool/repo-tool:
+	$(MAKE) -C repo-tool build
