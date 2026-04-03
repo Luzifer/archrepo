@@ -1,0 +1,188 @@
+packages:
+  arch-update:
+    repo: https://github.com/Luzifer/arch-update.git
+  archisteamfarm-bin:
+    repo: https://git.luzifer.io/luzifer-arch/archisteamfarm-bin.git
+  babel-eslint-parser:
+    repo: https://git.luzifer.io/luzifer-arch/babel-eslint-parser.git
+  beekeeper-studio-bin:
+    repo: https://git.luzifer.io/luzifer-arch/beekeeper-studio-bin.git
+  clusterctl-bin:
+    repo: https://git.luzifer.io/luzifer-arch/clusterctl-bin.git
+  discord:
+    repo: https://git.luzifer.io/luzifer-arch/discord.git
+  elb-instance-status:
+    repo: https://git.luzifer.io/luzifer-arch/elb-instance-status.git
+  envrun:
+    repo: https://git.luzifer.io/luzifer-arch/envrun.git
+  eslint-plugin-vue:
+    repo: https://git.luzifer.io/luzifer-arch/eslint-plugin-vue.git
+  gofumpt:
+    repo: https://git.luzifer.io/luzifer-arch/gofumpt.git
+  google-chrome-beta:
+    repo: https://git.luzifer.io/luzifer-arch/google-chrome-beta.git
+  google-chrome-dev:
+    repo: https://git.luzifer.io/luzifer-arch/google-chrome-dev.git
+  google-chrome:
+    repo: https://git.luzifer.io/luzifer-arch/google-chrome.git
+  he-tunnel:
+    repo: https://git.luzifer.io/luzifer-arch/he-tunnel.git
+  k9s:
+    repo: https://git.luzifer.io/luzifer-arch/k9s.git
+  kopia:
+    repo: https://git.luzifer.io/luzifer-arch/kopia.git
+  korvike:
+    repo: https://git.luzifer.io/luzifer-arch/korvike.git
+  kubernetes-bin:
+    repo: https://git.luzifer.io/luzifer-arch/kubernetes-bin.git
+  librespeed-cli:
+    repo: https://git.luzifer.io/luzifer-arch/librespeed-cli.git
+  luzifer:
+    repo: https://git.luzifer.io/luzifer-arch/luzifer.git
+  luzifer-base-binaries:
+    repo: https://git.luzifer.io/luzifer-arch/luzifer-base-binaries.git
+  nerd-fonts-dejavu-complete:
+    repo: https://git.luzifer.io/luzifer-arch/nerd-fonts-dejavu-complete.git
+  oras:
+    repo: https://git.luzifer.io/luzifer-arch/oras.git
+  streamdeck:
+    repo: https://git.luzifer.io/luzifer-arch/streamdeck.git
+  telegraf-bin:
+    repo: https://git.luzifer.io/luzifer-arch/telegraf-bin.git
+  vault2env:
+    repo: https://git.luzifer.io/luzifer-arch/vault2env.git
+  vault-bin:
+    repo: https://git.luzifer.io/luzifer-arch/vault-bin.git
+  vault-user-token:
+    repo: https://git.luzifer.io/luzifer-arch/vault-user-token.git
+  vercel:
+    repo: https://git.luzifer.io/luzifer-arch/vercel.git
+  vim-go-tools:
+    repo: https://git.luzifer.io/luzifer-arch/vim-go-tools.git
+
+  getxkblayout:
+    repo: https://gist.github.com/dccae45747a1dad41f011a01c75296a3.git
+  ttf-windows:
+    repo: https://gist.github.com/62a861982991afa8843b8922cb40abfc.git
+
+  abcde:
+    repo: https://aur.archlinux.org/abcde.git
+    dependsOn:
+      - cd-discid
+  abcde-musicbrainz-meta:
+    repo: https://aur.archlinux.org/abcde-musicbrainz-meta.git
+    dependsOn:
+      - perl-musicbrainz-discid
+      - perl-webservice-musicbrainz
+  adobe-base-14-fonts:
+    repo: https://aur.archlinux.org/adobe-base-14-fonts.git
+    dependsOn:
+      - t1lib
+  ausweisapp2:
+    repo: https://aur.archlinux.org/ausweisapp2.git
+    dependsOn:
+      - http-parser
+  babel-eslint:
+    repo: https://aur.archlinux.org/babel-eslint.git
+  brother-dcpl8410cdw-cups-bin:
+    repo: https://aur.archlinux.org/brother-dcpl8410cdw-cups-bin.git
+  brother-dcpl8410cdw-lpr-bin:
+    repo: https://aur.archlinux.org/brother-dcpl8410cdw-lpr-bin.git
+  cruft:
+    repo: https://aur.archlinux.org/cruft.git
+  cd-discid:
+    repo: https://aur.archlinux.org/cd-discid.git
+  cef-minimal:
+    repo: https://aur.archlinux.org/cef-minimal.git
+  cnquery:
+    repo: https://aur.archlinux.org/cnquery.git
+  cnspec:
+    repo: https://aur.archlinux.org/cnspec.git
+  crc:
+    repo: https://aur.archlinux.org/crc.git
+  edk2-ovmf-fedora:
+    repo: https://aur.archlinux.org/edk2-ovmf-fedora.git
+  python-eyed3:
+    repo: https://aur.archlinux.org/python-eyed3.git
+  genymotion:
+    repo: https://aur.archlinux.org/genymotion.git
+  golangci-lint-bin:
+    repo: https://aur.archlinux.org/golangci-lint-bin.git
+  granted-bin:
+    repo: https://aur.archlinux.org/granted-bin.git
+  hfsprogs:
+    repo: https://aur.archlinux.org/hfsprogs.git
+  http-parser:
+    repo: https://aur.archlinux.org/http-parser.git
+  kubelogin:
+    repo: https://aur.archlinux.org/kubelogin.git
+  masterpdfeditor-free:
+    repo: https://aur.archlinux.org/masterpdfeditor-free
+  mql:
+    repo: https://aur.archlinux.org/mql.git
+  mqtt-explorer:
+    repo: https://aur.archlinux.org/mqtt-explorer.git
+  nvm:
+    repo: https://aur.archlinux.org/nvm.git
+  obs-cli:
+    repo: https://aur.archlinux.org/obs-cli.git
+  oh-my-posh-bin:
+    repo: https://aur.archlinux.org/oh-my-posh-bin.git
+  openshift-client-bin:
+    repo: https://aur.archlinux.org/openshift-client-bin.git
+  openshift-developer-bin:
+    repo: https://aur.archlinux.org/openshift-developer-bin.git
+  osslsigncode:
+    repo: https://aur.archlinux.org/osslsigncode.git
+  packer-plugin-arm-image:
+    repo: https://aur.archlinux.org/packer-plugin-arm-image.git
+  pcsc-cyberjack:
+    repo: https://aur.archlinux.org/pcsc-cyberjack.git
+  perl-mojolicious:
+    repo: https://aur.archlinux.org/perl-mojolicious.git
+  perl-musicbrainz-discid:
+    repo: https://aur.archlinux.org/perl-musicbrainz-discid.git
+  perl-webservice-musicbrainz:
+    repo: https://aur.archlinux.org/perl-webservice-musicbrainz.git
+    dependsOn:
+      - perl-mojolicious
+  platformio:
+    repo: https://aur.archlinux.org/platformio.git
+  python-ajsonrpc:
+    repo: https://aur.archlinux.org/python-ajsonrpc.git
+  python-json-rpc:
+    repo: https://aur.archlinux.org/python-json-rpc.git
+  python-pulsectl:
+    repo: https://aur.archlinux.org/python-pulsectl.git
+  python-vdf:
+    repo: https://aur.archlinux.org/python-vdf.git
+  python3-yamale:
+    repo: https://aur.archlinux.org/python3-yamale.git
+  qflipper-git:
+    repo: https://aur.archlinux.org/qflipper-git.git
+  qrcodegen-cmake:
+    repo: https://aur.archlinux.org/qrcodegen-cmake.git
+  rasdaemon:
+    repo: https://aur.archlinux.org/rasdaemon.git
+  redisinsight-bin:
+    repo: https://aur.archlinux.org/redisinsight-bin.git
+  rustdesk:
+    repo: https://aur.archlinux.org/rustdesk.git
+  spotify:
+    repo: https://aur.archlinux.org/spotify.git
+  t1lib:
+    repo: https://aur.archlinux.org/t1lib.git
+  tilt-bin:
+    repo: https://aur.archlinux.org/tilt-bin.git
+  thinkfan:
+    repo: https://aur.archlinux.org/thinkfan.git
+  usbtop:
+    repo: https://aur.archlinux.org/usbtop.git
+  vscodium-electron-bin:
+    repo: https://aur.archlinux.org/vscodium-electron-bin.git
+  vscodium-electron-bin-marketplace:
+    repo: https://aur.archlinux.org/vscodium-electron-bin-marketplace.git
+  wrk:
+    repo: https://aur.archlinux.org/wrk.git
+  yay:
+    repo: https://aur.archlinux.org/yay.git

@@ -5,6 +5,7 @@
 packages.txt
 repo
 .repo_cache
+.repo_cache.yaml
 *.tar.xz
 *.tar.xz.sig
 *.tar.zst
