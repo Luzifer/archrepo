@@ -12,6 +12,8 @@ import (
 	"git.luzifer.io/luzifer/archrepo/repo-tool/pkg/status"
 )
 
+const planJobKey = "creating plan"
+
 func createExecutionPlan(
 	ctx context.Context,
 	opts BuildOpts,
@@ -20,10 +22,13 @@ func createExecutionPlan(
 	commits map[string]string,
 	err error,
 ) {
+	opts.Display.AddJob(planJobKey, status.JobStatusRunning, "")
+
 	names := orderedPackageNames(opts.Config)
 
-	commits, err = packageHeadCommits(ctx, opts.Config, names)
+	commits, err = packageHeadCommits(ctx, opts, names)
 	if err != nil {
+		opts.Display.UpdateJob(planJobKey, status.JobStatusFailure, "")
 		return nil, nil, err
 	}
 
@@ -44,6 +49,7 @@ func createExecutionPlan(
 		plan = append(plan, name)
 	}
 
+	opts.Display.UpdateJob(planJobKey, status.JobStatusSuccess, "")
 	return plan, commits, nil
 }
 
@@ -106,11 +112,12 @@ func packageAlreadyBuilt(buildCache *cache.File, name, commit string) bool {
 	return cacheEntry.LastBuiltStatus == cache.BuildStatusSuccess && cacheEntry.LastBuiltCommit == commit
 }
 
-func packageHeadCommits(ctx context.Context, conf config.File, names []string) (commits map[string]string, err error) {
+func packageHeadCommits(ctx context.Context, opts BuildOpts, names []string) (commits map[string]string, err error) {
 	commits = make(map[string]string, len(names))
 
 	for _, name := range names {
-		commit, err := git.GetHeadCommit(ctx, conf.Packages[name])
+		opts.Display.UpdateJob(planJobKey, status.JobStatusRunning, fmt.Sprintf("scanning head-commit of %q", name))
+		commit, err := git.GetHeadCommit(ctx, opts.Config.Packages[name])
 		if err != nil {
 			return nil, fmt.Errorf("resolving head commit for %q: %w", name, err)
 		}
