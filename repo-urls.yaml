@@ -45,6 +45,8 @@ packages:
     repo: https://git.luzifer.io/luzifer-arch/nerd-fonts-dejavu-complete.git
   oras:
     repo: https://git.luzifer.io/luzifer-arch/oras.git
+  pnpm-bin:
+    repo: https://git.luzifer.io/luzifer-arch/pnpm-bin.git
   streamdeck:
     repo: https://git.luzifer.io/luzifer-arch/streamdeck.git
   telegraf-bin:
@@ -174,6 +176,8 @@ packages:
     repo: https://aur.archlinux.org/t1lib.git
   tilt-bin:
     repo: https://aur.archlinux.org/tilt-bin.git
+  tiny4linux-cli:
+    repo: https://aur.archlinux.org/tiny4linux-cli.git
   thinkfan:
     repo: https://aur.archlinux.org/thinkfan.git
   usbtop:
