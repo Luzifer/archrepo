@@ -3,7 +3,7 @@ module git.luzifer.io/luzifer/archrepo/repo-tool
 go 1.26.1
 
 require (
-	github.com/Luzifer/rconfig/v2 v2.6.1
+	github.com/Luzifer/rconfig/v2 v2.6.2
 	github.com/hashicorp/vault/api v1.23.0
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.9.4
