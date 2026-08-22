@@ -6,7 +6,7 @@ require (
 	github.com/Luzifer/rconfig/v2 v2.6.2
 	github.com/hashicorp/vault/api v1.23.0
 	github.com/pkg/errors v0.9.1
-	github.com/sirupsen/logrus v1.10.0
+	github.com/sirupsen/logrus v1.10.1
 	github.com/stretchr/testify v1.12.1
 	go.yaml.in/yaml/v3 v3.0.5
 )
