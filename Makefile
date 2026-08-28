@@ -24,10 +24,10 @@ do_cleanup: cleanup_files
 do_cleanup: list_packages
 
 download: ## Downloads the current repo state
-	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete s3://archrepo/x86_64/ $(REPO_DIR)/"
+	bash -ec "eval $$(vault2env --key secret/terraform/pub-bucket/archrepo --export) && s3sync --delete s3://pb-archrepo-921304813343-eu-west-1-an/x86_64/ $(REPO_DIR)/"
 
 upload: cleanup_files ## Uploads the current repo state
-	bash -ec "eval $$(vault2env --key secret/minio/archrepo --export) && s3sync --delete $(REPO_DIR)/ s3://archrepo/x86_64/"
+	bash -ec "eval $$(vault2env --key secret/terraform/pub-bucket/archrepo --export) && s3sync --delete $(REPO_DIR)/ s3://pb-archrepo-921304813343-eu-west-1-an/x86_64/"
 
 # Maintenance targets
 
