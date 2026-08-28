@@ -9,8 +9,6 @@ packages:
     repo: https://git.luzifer.io/luzifer-arch/beekeeper-studio-bin.git
   clusterctl-bin:
     repo: https://git.luzifer.io/luzifer-arch/clusterctl-bin.git
-  discord:
-    repo: https://git.luzifer.io/luzifer-arch/discord.git
   elb-instance-status:
     repo: https://git.luzifer.io/luzifer-arch/elb-instance-status.git
   envrun:
@@ -59,8 +57,6 @@ packages:
     repo: https://git.luzifer.io/luzifer-arch/vault-bin.git
   vault-user-token:
     repo: https://git.luzifer.io/luzifer-arch/vault-user-token.git
-  vercel:
-    repo: https://git.luzifer.io/luzifer-arch/vercel.git
   vim-go-tools:
     repo: https://git.luzifer.io/luzifer-arch/vim-go-tools.git
 
@@ -116,10 +112,6 @@ packages:
     repo: https://aur.archlinux.org/hfsprogs.git
   http-parser:
     repo: https://aur.archlinux.org/http-parser.git
-  kubelogin:
-    repo: https://aur.archlinux.org/kubelogin.git
-  masterpdfeditor-free:
-    repo: https://aur.archlinux.org/masterpdfeditor-free
   mql:
     repo: https://aur.archlinux.org/mql.git
   mqtt-explorer:
@@ -170,8 +162,6 @@ packages:
     repo: https://aur.archlinux.org/redisinsight-bin.git
   rustdesk:
     repo: https://aur.archlinux.org/rustdesk.git
-  spotify:
-    repo: https://aur.archlinux.org/spotify.git
   t1lib:
     repo: https://aur.archlinux.org/t1lib.git
   tilt-bin:
